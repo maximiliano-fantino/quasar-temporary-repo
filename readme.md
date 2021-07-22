@@ -40,6 +40,10 @@ Para realizar las pruebas se utilizaron los siguientes recursos:
   * Ejecutar en una consola CMD: dotnet run --project .\ApiQF\ApiQF.csproj
   
 * Una vez ejecutado, dirigirse a https://localhost:44365/swagger para acceder a la documentación base de la API
+
+### Test
+* Desde una consola ejecutar el comando **dotnet test .\ApiQF.Tests\ApiQF.Tests.csproj** para ejecutar los test
+* ![Alt text](resources/6.png?raw=true "Test")
 ---
 # Api
 ##### Dentro de Swagger está la información de la API
@@ -50,4 +54,15 @@ Para realizar las pruebas se utilizaron los siguientes recursos:
 ![Alt text](resources/3.png?raw=true "GetTopSecretSplit")
 ![Alt text](resources/5.png?raw=true "PostTopSecretSplit")
 ![Alt text](resources/4.png?raw=true "GetTopSecret")
+
+# Nivel 2 cloud computing
+
+Para cumplimentar con el nivel dos y hostear la app en un cloud computing libre elegí **Google App Engine Flex**
+
+### Los endpoints son los siguientes:
+* [Swagger](https://quasar-fire-320318.appspot.com/swagger)
+* [Top Secret](https://quasar-fire-320318.appspot.com/api/TopSecret) [POST]
+* [Top Secret Split](https://quasar-fire-320318.appspot.com/api/topsecret_split) [GET, POST]
+
+**Limitar las peticiones para evitar cargos**
 
