@@ -21,7 +21,7 @@ Luego, para probar y obtner puntos reales utilice esta herramienta que me permit
 https://www.desmos.com/calculator/bnk9uih1gl
 
 Esto fue usado para establecer si una posicion era correcta o no.
-![Alt text](../resources/1.png?raw=true "Circulos")
+![Alt text](resources/1.png?raw=true "Circulos")
 
 ### Requisitos
 Para ejecutar la aplicacion se necesitara:
@@ -47,9 +47,9 @@ Para realizar las pruebas se utilizaron los siguintes recursos:
 ---
 # Api
 ##### Dentro de Swagger podemos ver esta informacion de la API
-![Alt text](../resources/2.png?raw=true "Swagger")
+![Alt text](resources/2.png?raw=true "Swagger")
 Aqui podemos ver que se detallan los endpoint solicitados junto con la estructura esperada y la que sera devuelta
-![Alt text](../resources/3.png?raw=true "GetTopSecretSplit")
-![Alt text](../resources/5.png?raw=true "PostTopSecretSplit")
-![Alt text](../resources/4.png?raw=true "GetTopSecret")
+![Alt text](resources/3.png?raw=true "GetTopSecretSplit")
+![Alt text](resources/5.png?raw=true "PostTopSecretSplit")
+![Alt text](resources/4.png?raw=true "GetTopSecret")
 
