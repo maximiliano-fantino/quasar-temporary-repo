@@ -1,54 +1,52 @@
-﻿# Api QF (Operacion Fuego Quasar)
-## Descripcion
-Esta API tiene como objetivo cumplir con el challenge.
-Este challenge solicita principalmente la implementacion de dos metodos:
-* GetLocation(distances ...float32) : (x,y)float32
+﻿# Api QF (Operación Fuego Quasar)
+## Disclaimer
+Esta API tiene como objetivo cumplir con el challenge propuesto, que solicita principalmente la implementación de dos métodos:
+* GetLocation(distances ...float32) : (x,y) float32
 * GetMessage(messages ...[]string) : (msg) string
 
-Para llevar adelante la implementacion de GetLocation tuve que investigar y me encontre con conceptos matematicos conocidos pero que tengo algo oxidados.
+Para llevar adelante la implementación de **GetLocation** tuve que investigar y me encontré con conceptos matemáticos que conocía, pero no recordaba.
+De todas maneras, seguí adelante.
 
-Sin embargo lo lleve adelante.
-La forma de obtener la localizacion que implemente fue mediante la trilateracion. 
+Implementé la **trilateración** para obtener la localización. 
 
-Esto es que, mediante el conocimiento de 3 puntos (satelites) y 3 distancias podria utilizar esta distancia como el radio para dibujar un circulo ficticio y con ello obtener la ubicacion de las posibles zonas de contacto.
+Este método permite, a partir del conocimiento de 3 puntos (satélites) y 3 distancias, utilizar dicha distancia como el radio para dibujar un círculo ficticio y así obtener la ubicación de las posibles zonas de contacto.
 
-Ayudado por la teoria encontrada aca: http://paulbourke.net/geometry/circlesphere
+Ayudado por la teoria encontrada [aquí](http://paulbourke.net/geometry/circlesphere) y otro tanto por los recusos casi inagotables de internet, logré llegar al objetivo.
 
-Y otro tanto por los recusos casi inagotables de internet logre llegar al objetivo.
-Mentiria si dijiera que el calculo es mio 100%
+Luego, para probar la teoría y obtener puntos reales utilicé la herramienta [desmos](https://www.desmos.com/calculator/bnk9uih1gl) que me permitió, en base a puntos y distancias, dibujar los círculos y ver sus puntos de intersección. 
 
-Luego, para probar y obtner puntos reales utilice esta herramienta que me permite en base a puntos y distancia dibujar los circulos y ver sus puntos de interseccion
-https://www.desmos.com/calculator/bnk9uih1gl
+Concretamente, usé la herramienta para establecer si una posicion era correcta o no, como se ve en la siguiente imagen:
 
-Esto fue usado para establecer si una posicion era correcta o no.
 ![Alt text](resources/1.png?raw=true "Circulos")
 
 ### Requisitos
-Para ejecutar la aplicacion se necesitara:
+Para ejecutar la aplicación se necesitará:
 * Visual Studio, de preferencia 2017 en adelante 
 * ASP.Net Core 2.1
 
 ### Utilidades
-Para realizar las pruebas se utilizaron los siguintes recursos:
+Para realizar las pruebas se utilizaron los siguientes recursos:
 * [Insomnia Rest](https://insomnia.rest/)
-* [Calculadora Interesecciones](https://www.desmos.com/calculator/bnk9uih1gl?lang=es)
+* [Calculadora interesecciones](https://www.desmos.com/calculator/bnk9uih1gl?lang=es)
 
 ---
-### Instalacion y Ejecucion
+### Instalación y ejecución
 * Clonar el repositorio.
 * #### Ejecutar desde Visual Studio
   * Abrir el archivo "\ApiQF\ApiQF.sln"
   * Ctrl + F5 para buildear y correr el programar
-  * En este punto puede que demore ya que debe descargar las dependecias de nuget
-* ### Ejecutar desde la consola
+  * Esto puede demorar ya que debe descargar las dependecias de nuget
+* #### Ejecutar desde la consola
   * Ejecutar en una consola CMD: dotnet run --project .\ApiQF\ApiQF.csproj
   
-* Una vez ejecutado, dirigirse a https://localhost:44365/swagger para acceder a la documentacion base de la API
+* Una vez ejecutado, dirigirse a https://localhost:44365/swagger para acceder a la documentación base de la API
 ---
 # Api
-##### Dentro de Swagger podemos ver esta informacion de la API
+##### Dentro de Swagger está la información de la API
 ![Alt text](resources/2.png?raw=true "Swagger")
-Aqui podemos ver que se detallan los endpoint solicitados junto con la estructura esperada y la que sera devuelta
+
+##### Aquí se detallan los endpoints solicitados junto con la estructura esperada y la que será devuelta.
+
 ![Alt text](resources/3.png?raw=true "GetTopSecretSplit")
 ![Alt text](resources/5.png?raw=true "PostTopSecretSplit")
 ![Alt text](resources/4.png?raw=true "GetTopSecret")
