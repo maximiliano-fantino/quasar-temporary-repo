@@ -22,7 +22,7 @@ namespace ApiQF
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(Configuration);
-
+            services.AddControllers();
             var log = new Logger();
             services.AddSingleton(log);
 
@@ -72,7 +72,13 @@ namespace ApiQF
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseRouting();
+
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

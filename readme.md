@@ -66,3 +66,7 @@ Para cumplimentar con el nivel dos y hostear la app en un cloud computing libre 
 
 **Limitar las peticiones para evitar cargos**
 
+#### Adicionalmente se sube a Azure **Asp.Net Core 3.1**
+* [Swagger](https://apiqf20210723113500.azurewebsites.net/swagger/)
+* [Top Secret](https://apiqf20210723113500.azurewebsites.net/api/TopSecret) [POST]
+* [Top Secret Split](https://apiqf20210723113500.azurewebsites.net/api/topsecret_split) [GET, POST]
